@@ -7,10 +7,10 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="63a1467b-95c7-4ea5-88fd-119f6c1411a5" Publisher="CN=Nk" Version="1.4.0.1" ProcessorArchitecture="neutral" />
+  <Identity Name="63a1467b-95c7-4ea5-88fd-119f6c1411a5" Publisher="CN=Nk" Version="1.4.2.0" ProcessorArchitecture="neutral" />
   <Properties>
     <DisplayName>WeatherUA</DisplayName>
-    <PublisherDisplayName>Nk</PublisherDisplayName>
+    <PublisherDisplayName>Nk185</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>
@@ -22,7 +22,8 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="WeatherUA.exe" EntryPoint="WeatherUA.App">
-      <m2:VisualElements DisplayName="WeatherUA" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="WeatherUA" ForegroundText="light" BackgroundColor="#ffffff">
+      <m2:VisualElements DisplayName="WeatherUA" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="WeatherUA" ForegroundText="dark" BackgroundColor="#ffffff">
+        <m2:DefaultTile ShortName="WeatherUA" DefaultSize="square150x150Logo"></m2:DefaultTile>
         <m2:SplashScreen Image="Assets\SplashScreen.png" />
       </m2:VisualElements>
     </Application>

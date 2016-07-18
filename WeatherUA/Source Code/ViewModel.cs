@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*
+ * Application:    WeatherUA
+ * Solution:       WeatherUA
+ * Copyright:      Nk185
+ * Code copyright: Nk185
+ * File version:   1.4.2.0 
+ * Used external packages: 
+ *      Galasoft - MVVM;
+ *      Newtonsoft - JSON;
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -106,21 +117,21 @@ namespace WeatherUA.Source_Code
     }
 
     public class ViewModel : ViewModelBase, IViewModelNotifier
-    {
-        private String _city = "Kyiv"; // Default city        
+    {   
         private Model _Mdl; // Model; Contains data
         private WeatherStat _currentStatus = new WeatherStat();
         private WeatherStatForecast[] Forecast = new WeatherStatForecast[10]; // Array of weather statuses for Forecast
+        private City _chosenCity;
 
         public RelayCommand UpdateBtn { get; private set; } // When button clicked in Settings     
 
         public List<City> Cities { get; set; } // Collection of items for listview (cities)
         public City ChosenCity
         {
-            get { return this.Cities[65]; }
+            get { return this._chosenCity; }
             set
             {
-                this._city = value.Name;
+                this._chosenCity = value;
                 RaisePropertyChanged(() => this.ttlWeatherFor);
                 UpdateInfo();
             }
@@ -130,7 +141,7 @@ namespace WeatherUA.Source_Code
         public bool ProgressRingEnabled { get { return !this.UpdateBtnEnabled; } }
 
         #region Main info about current day
-        public String ttlWeatherFor { get { return "WEATHER FOR: " + this._city.ToUpper() + ", UKRAINE"; } } // Title
+        public String ttlWeatherFor { get { return "WEATHER FOR: " + this.ChosenCity.Name.ToUpper() + ", UKRAINE"; } } // Title
         public String TemperatureNow
         {
             get
@@ -218,6 +229,9 @@ namespace WeatherUA.Source_Code
             this._Mdl = new Model(this);
             this.Cities = this._Mdl.Cities;
 
+            // Init default city
+            this._chosenCity = this.Cities[65];
+
             //Load weather from server
             UpdateInfo();
 
@@ -242,7 +256,7 @@ namespace WeatherUA.Source_Code
             RaisePropertyChanged(() => this.UpdateBtnEnabled);
             RaisePropertyChanged(() => this.ProgressRingEnabled);
 
-            this._Mdl.LoadData(this._city);
+            this._Mdl.LoadWeatherData(this.ChosenCity.Content);
         }
 
         /// <summary>

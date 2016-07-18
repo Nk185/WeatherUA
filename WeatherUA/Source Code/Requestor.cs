@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*
+ * Application:    WeatherUA
+ * Solution:       WeatherUA
+ * Copyright:      Nk185
+ * Code copyright: Nk185
+ * File version:   1.4.1.0 
+ * Used external packages: 
+ *      Galasoft - MVVM;
+ *      Newtonsoft - JSON;
+ */
+
+using System;
 using System.Net;
 using System.Net.Http;
 using System.Threading;
