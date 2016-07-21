@@ -1,1 +1,1 @@
-G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\AppPackages\WeatherUA_1.4.2.0_AnyCPU_Debug_Test\WeatherUA_1.4.2.0_AnyCPU_Debug.appx
+G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\AppPackages\WeatherUA_1.4.2.1_AnyCPU_Debug_Test\WeatherUA_1.4.2.1_AnyCPU_Debug.appx

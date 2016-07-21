@@ -70,7 +70,7 @@ namespace WeatherUA.Source_Code
                 new City { Name = "Bilovods'k", Content = "Bilovods'k" },
                 new City { Name = "Bobrynets'", Content = "Bobrynets'" },
                 new City { Name = "Bohodukhiv", Content = "Bohodukhiv" },
-                new City { Name = "Boryspil", Content = "Boryspil" },
+                new City { Name = "Boryspil'", Content = "Boryspil'" },
                 new City { Name = "Botieve", Content = "Botieve" },
                 new City { Name = "Brody", Content = "Brody" },
                 new City { Name = "Cape Kazantip", Content = "Cape_Kazantip" },

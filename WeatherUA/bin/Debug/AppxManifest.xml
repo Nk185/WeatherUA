@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="63a1467b-95c7-4ea5-88fd-119f6c1411a5" Publisher="CN=Nk" Version="1.4.2.0" ProcessorArchitecture="neutral" />
+  <Identity Name="63a1467b-95c7-4ea5-88fd-119f6c1411a5" Publisher="CN=Nk" Version="1.4.2.1" ProcessorArchitecture="neutral" />
   <Properties>
     <DisplayName>WeatherUA</DisplayName>
     <PublisherDisplayName>Nk185</PublisherDisplayName>
