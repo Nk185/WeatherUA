@@ -3,7 +3,7 @@
  * Solution:       WeatherUA
  * Copyright:      Nk185
  * Code copyright: Nk185
- * File version:   1.4.2.0 
+ * File version:   1.4.2.1 
  * Used external packages: 
  *      Galasoft - MVVM;
  *      Newtonsoft - JSON;

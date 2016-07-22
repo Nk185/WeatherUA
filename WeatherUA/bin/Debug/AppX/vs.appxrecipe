@@ -6,24 +6,24 @@
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>63a1467b-95c7-4ea5-88fd-119f6c1411a5</PackageIdentityName>
-    <RegisteredManifestChecksum>4698A54F60C8AD7790FEBD66E077A8A86AE522ED8CB8D59C4448446F64D9C600</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>63a1467b-95c7-4ea5-88fd-119f6c1411a5_1.4.2.0_neutral__0g6ht519dpkb4</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>D171A948789377B958D5B880F67EEC602CB1024358A06C0CE8BDAAE1C5197407</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>63a1467b-95c7-4ea5-88fd-119f6c1411a5_1.4.2.1_neutral__0g6ht519dpkb4</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>63a1467b-95c7-4ea5-88fd-119f6c1411a5_0g6ht519dpkb4!App</RegisteredUserModeAppID>
     <RegisteredPackageID>63a1467b-95c7-4ea5-88fd-119f6c1411a5</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=Nk</RegisteredPackagePublisher>
-    <RegisteredVersion>1.4.2.0</RegisteredVersion>
+    <RegisteredVersion>1.4.2.1</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-07-18T19:28:39.994</Modified>
+      <Modified>2016-07-21T23:36:28.177</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\bin\Debug\WeatherUA.exe">
       <PackagePath>WeatherUA.exe</PackagePath>
-      <Modified>2016-07-21T23:35:30.524</Modified>
+      <Modified>2016-07-22T01:53:43.471</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\packages\MvvmLightLibs.5.3.0.0\lib\windows81\GalaSoft.MvvmLight.dll">
       <PackagePath>GalaSoft.MvvmLight.dll</PackagePath>
@@ -135,7 +135,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-07-18T19:28:39.700</Modified>
+      <Modified>2016-07-22T01:53:43.697</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

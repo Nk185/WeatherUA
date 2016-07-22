@@ -50,11 +50,3 @@ G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\obj\Debu
 G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\bin\Debug\Newtonsoft.Json.dll
 G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\bin\Debug\Newtonsoft.Json.xml
 G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\obj\Debug\WeatherUA.csprojResolveAssemblyReference.cache
-G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\obj\Debug\Microsoft.Practices.ServiceLocation\layout.resfiles
-G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\obj\Debug\Microsoft.Practices.ServiceLocation\layout.resfiles.intermediate
-G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\obj\Debug\Microsoft.Practices.ServiceLocation\Resources.resfiles
-G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\obj\Debug\Microsoft.Practices.ServiceLocation\Resources.resfiles.intermediate
-G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\obj\Debug\Microsoft.Practices.ServiceLocation\pri.resfiles
-G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\obj\Debug\Microsoft.Practices.ServiceLocation\pri.resfiles.intermediate
-G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\obj\Debug\Microsoft.Practices.ServiceLocation\priconfig.xml
-G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\obj\Debug\Microsoft.Practices.ServiceLocation\priconfig.xml.intermediate

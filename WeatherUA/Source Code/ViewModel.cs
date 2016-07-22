@@ -3,7 +3,7 @@
  * Solution:       WeatherUA
  * Copyright:      Nk185
  * Code copyright: Nk185
- * File version:   1.4.2.0 
+ * File version:   1.4.2.1
  * Used external packages: 
  *      Galasoft - MVVM;
  *      Newtonsoft - JSON;
@@ -22,8 +22,8 @@ namespace WeatherUA.Source_Code
 {
     public class WeatherStat
     {
-        public String SkyStat = "N/A";
-        public String WindDirection = "N/A";
+        public string SkyStat = "N/A";
+        public string WindDirection = "N/A";
         public int TemperatureC = 0;
         public int TemperatureF = 0;
         public int FeelsLikeC = 0;
@@ -34,23 +34,23 @@ namespace WeatherUA.Source_Code
 
     public class WeatherStatForecast
     {
-        private String _skyStat = "N/A";
-        private String _windDirection = "N/A";
-        private String _day = "N/A";
-        private String _weekdayShrt = "N/A";
+        private string _skyStat = "N/A";
+        private string _windDirection = "N/A";
+        private string _weekdayShrt = "N/A";
         private int _temperatureC_H = 0;
         private int _temperatureF_H = 0;
         private int _temperatureC_L = 0;
         private int _temperatureF_L = 0;
         private uint _windSpeedKPH = 0;
         private uint _windSpeedMPH = 0;
+        private uint _day = 0;
 
-        public String SkyStat { get { return this._skyStat; } set { this._skyStat = value; } }
-        public String WindDirection { get { return "Wind direction: " + this._windDirection; } set { this._windDirection = value; } }
-        public String Day { get { return this._day; } set { this._day = value; } }
-        public String WeekdayShrt { get { return this._weekdayShrt; } set { this._weekdayShrt = value; } }
+        public string SkyStat { get { return this._skyStat; } set { this._skyStat = value; } }
+        public string WindDirection { get { return "Wind direction: " + this._windDirection; } set { this._windDirection = value; } }
+        public uint Day { get { return this._day; } set { this._day = value; } }
+        public string WeekdayShrt { get { return this._weekdayShrt; } set { this._weekdayShrt = value; } }
 
-        public String TemperatureH
+        public string TemperatureH
         {
             get
             {
@@ -58,7 +58,7 @@ namespace WeatherUA.Source_Code
                     + this._temperatureF_H.ToString() + "°F";
             }
         }
-        public String TemperatureL
+        public string TemperatureL
         {
             get
             {
@@ -66,7 +66,7 @@ namespace WeatherUA.Source_Code
                     + this._temperatureF_L.ToString() + "°F";
             }
         }
-        public String Wind
+        public string Wind
         {
             get
             {
