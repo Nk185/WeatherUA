@@ -3,7 +3,7 @@
  * Solution:       WeatherUA
  * Copyright:      Nk185
  * Code copyright: Nk185
- * File version:   1.4.2.1 
+ * File version:   1.4.3.0 
  * Used external packages: 
  *      Galasoft - MVVM;
  *      Newtonsoft - JSON;
@@ -19,24 +19,12 @@ using Windows.UI.Popups;
 namespace WeatherUA.Source_Code
 {
     /// <summary>
-    /// Represents city as object
-    /// </summary>
-    public class City
-    {
-        /// <summary>
-        /// City name
-        /// </summary>
-        public string Name { get; set; }
-        public string Content { get; set; }
-    }
-
-    /// <summary>
     /// Main model. Conteins general methods.
     /// Prepairs data for ViewModel.
     /// </summary>
     class Model
     {
-        private IViewModelNotifier _viewNotifier;
+        private readonly IViewModelNotifier _viewNotifier;
 
         /// <summary>
         /// Lis of cities for "Location Settings" list in View.
@@ -214,33 +202,33 @@ namespace WeatherUA.Source_Code
         {
             try
             {
-                WeatherStatForecast[] Forecast = new WeatherStatForecast[10];
-                WeatherStat CurrentStatus = new WeatherStat();
+                List<WeatherStatForecast> forecast = new List<WeatherStatForecast>();
+                WeatherStat currentStatus = new WeatherStat();
                 Requestor requestor = new Requestor();
-                bool StatSuccessfully = false;
-                bool ForecSuccessfully = false;
+                bool statSuccessfully = false;
+                bool forecSuccessfully = false;
                 JsonParser jsp;
 
-                await requestor.getData(city); // getting json response
+                await requestor.GetData(city); // getting json response
 
                 jsp = new JsonParser(requestor.CurrentWeatherJson);
 
-                StatSuccessfully = jsp.ParseWeatherStat(out CurrentStatus); // parsing current status
+                statSuccessfully = jsp.ParseWeatherStat(out currentStatus); // parsing current status
 
                 jsp.EnterNewResponse = requestor.ForecastJson;
-                ForecSuccessfully = jsp.ParseWeatherForec(out Forecast); // parsing forecast
+                forecSuccessfully = jsp.ParseWeatherForec(out forecast); // parsing forecast
 
-                if (StatSuccessfully || ForecSuccessfully)
+                if (statSuccessfully || forecSuccessfully)
                 {
-                    if (!ForecSuccessfully)
+                    if (!forecSuccessfully)
                         this.ShowMsg("Occurred error: Cannot load all required data for forecast. All missed data will be replaced by default values." +
                             " Try to update info a bit later...", "Got it");
 
-                    if (!StatSuccessfully)
+                    if (!statSuccessfully)
                         this.ShowMsg("Occurred error: Cannot load current weather status. All missed data will be replaced by default values." +
                             " Try to update info a bit later...", "Got it");
 
-                    this._viewNotifier.PropertyChangedW(CurrentStatus, Forecast, true, true);
+                    this._viewNotifier.PropertyChangedW(currentStatus, forecast, true, true);
                 }
                 else
                 {

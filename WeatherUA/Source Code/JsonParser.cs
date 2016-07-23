@@ -3,7 +3,7 @@
  * Solution:       WeatherUA
  * Copyright:      Nk185
  * Code copyright: Nk185
- * File version:   1.4.1.2
+ * File version:   1.4.2.0
  * Used external packages: 
  *      Galasoft - MVVM;
  *      Newtonsoft - JSON;
@@ -27,7 +27,7 @@ namespace WeatherUA.Source_Code
         /// <summary>
         /// Json response to process.
         /// </summary>
-        private string _jsonResponse { get; set; }
+        private string JsonResponse { get; set; }
         
         /// <summary>
         /// Creates new instance of JsonParser.
@@ -35,20 +35,20 @@ namespace WeatherUA.Source_Code
         /// <param name="jsonResponse">Response in json format</param>
         public JsonParser(string jsonResponse)
         {
-            this._jsonResponse = jsonResponse;
+            this.JsonResponse = jsonResponse;
         }
         /// <summary>
         /// Resets passed json response.
         /// In case if there is no need to create new instance, you can replace json as soon 
         /// as methods in this class processes response from current inner variable
         /// </summary>
-        public string EnterNewResponse { set { this._jsonResponse = value; } }
+        public string EnterNewResponse { set { this.JsonResponse = value; } }
 
         /// <summary>
         /// Extracts info about current weather status.
         /// </summary>
         /// <param name="weatherStatus">Out parameter. WeatherStat with current weather status</param>
-        /// <returns>Is data was successfully parsed.</returns>               
+        /// <returns>Are data was successfully parsed.</returns>               
         public bool ParseWeatherStat(out WeatherStat weatherStatus)
         {
             WeatherStat ws = new WeatherStat();
@@ -56,16 +56,16 @@ namespace WeatherUA.Source_Code
 
             try
             {
-                dynamic DeserializedData = JsonConvert.DeserializeObject<dynamic>(this._jsonResponse);
+                dynamic deserializedData = JsonConvert.DeserializeObject<dynamic>(this.JsonResponse);
 
-                ws.SkyStat       = (string)DeserializedData.current_observation.weather; // in response - string
-                ws.TemperatureC  = (int)DeserializedData.current_observation.temp_c; // in response - double
-                ws.TemperatureF  = (int)DeserializedData.current_observation.temp_f; // in response - double
-                ws.FeelsLikeC    = Convert.ToInt32((double)DeserializedData.current_observation.feelslike_c); // in response - string with double value
-                ws.FeelsLikeF    = Convert.ToInt32((double)DeserializedData.current_observation.feelslike_f); // in response - string with double value
-                ws.WindSpeedKPH  = (uint)DeserializedData.current_observation.wind_kph; // in response - double
-                ws.WindSpeedMPH  = (uint)DeserializedData.current_observation.wind_mph; // in response - double
-                ws.WindDirection = (string)DeserializedData.current_observation.wind_dir; // in response - string
+                ws.SkyStat       = (string)deserializedData.current_observation.weather; // in response - string
+                ws.TemperatureC  = (int)deserializedData.current_observation.temp_c; // in response - double
+                ws.TemperatureF  = (int)deserializedData.current_observation.temp_f; // in response - double
+                ws.FeelsLikeC    = Convert.ToInt32((double)deserializedData.current_observation.feelslike_c); // in response - string with double value
+                ws.FeelsLikeF    = Convert.ToInt32((double)deserializedData.current_observation.feelslike_f); // in response - string with double value
+                ws.WindSpeedKph  = (uint)deserializedData.current_observation.wind_kph; // in response - double
+                ws.WindSpeedMph  = (uint)deserializedData.current_observation.wind_mph; // in response - double
+                ws.WindDirection = (string)deserializedData.current_observation.wind_dir; // in response - string
 
                 isSuccess = true;
             }
@@ -76,8 +76,8 @@ namespace WeatherUA.Source_Code
                 ws.TemperatureF  = ws.TemperatureF == 0 ? 0 : ws.TemperatureF;
                 ws.FeelsLikeC    = ws.FeelsLikeC == 0 ? 0 : ws.FeelsLikeC;
                 ws.FeelsLikeF    = ws.FeelsLikeF == 0 ? 0 : ws.FeelsLikeF;
-                ws.WindSpeedKPH  = ws.WindSpeedKPH == 0 ? 0 : ws.WindSpeedKPH;
-                ws.WindSpeedMPH  = ws.WindSpeedMPH == 0 ? 0 : ws.WindSpeedMPH;
+                ws.WindSpeedKph  = ws.WindSpeedKph == 0 ? 0 : ws.WindSpeedKph;
+                ws.WindSpeedMph  = ws.WindSpeedMph == 0 ? 0 : ws.WindSpeedMph;
                 ws.WindDirection = "N/A";
 
                 isSuccess = false;
@@ -90,12 +90,12 @@ namespace WeatherUA.Source_Code
         /// <summary>
         /// Extracts info about forecast for 10 days.
         /// </summary>
-        /// <param name="weatherForecast">Out parameter. 10-elements array of WeatherStatForecast with forecast info.</param>
-        /// <returns>Is data was successfully parsed.</returns>
-        public bool ParseWeatherForec(out WeatherStatForecast[] weatherForecast)
+        /// <param name="weatherForecast">Out parameter. 10-elements list of WeatherStatForecast with forecast info.</param>
+        /// <returns>Are data was successfully parsed.</returns>
+        public bool ParseWeatherForec(out List<WeatherStatForecast> weatherForecast)
         {
             WeatherStatForecast[] ws = new WeatherStatForecast[10];
-            dynamic DeserializedData = JsonConvert.DeserializeObject<dynamic>(this._jsonResponse);
+            dynamic deserializedData = JsonConvert.DeserializeObject<dynamic>(this.JsonResponse);
             bool isSuccess = true; 
 
             for (int i = 0; i < 10; i++)
@@ -104,19 +104,19 @@ namespace WeatherUA.Source_Code
 
                 try
                 {
-                    ws[i].Day         = (uint)DeserializedData.forecast.simpleforecast.forecastday[i].date.day; // in response - integer
-                    ws[i].WeekdayShrt = (string)DeserializedData.forecast.simpleforecast.forecastday[i].date.weekday_short; // in response - string
+                    ws[i].Day         = (uint)deserializedData.forecast.simpleforecast.forecastday[i].date.day; // in response - integer
+                    ws[i].WeekdayShrt = (string)deserializedData.forecast.simpleforecast.forecastday[i].date.weekday_short; // in response - string
 
-                    ws[i].SkyStat = (string)DeserializedData.forecast.simpleforecast.forecastday[i].conditions; // in response - string
+                    ws[i].SkyStat = (string)deserializedData.forecast.simpleforecast.forecastday[i].conditions; // in response - string
 
-                    ws[i].TemperatureC_H = Convert.ToInt32((string)DeserializedData.forecast.simpleforecast.forecastday[i].high.celsius); // in response - string
-                    ws[i].TemperatureF_H = Convert.ToInt32((string)DeserializedData.forecast.simpleforecast.forecastday[i].high.fahrenheit); // in response - string
-                    ws[i].TemperatureC_L = Convert.ToInt32((string)DeserializedData.forecast.simpleforecast.forecastday[i].low.celsius); // in response - string
-                    ws[i].TemperatureF_L = Convert.ToInt32((string)DeserializedData.forecast.simpleforecast.forecastday[i].low.fahrenheit); // in response - string
+                    ws[i].TemperatureCH = Convert.ToInt32((string)deserializedData.forecast.simpleforecast.forecastday[i].high.celsius); // in response - string
+                    ws[i].TemperatureFH = Convert.ToInt32((string)deserializedData.forecast.simpleforecast.forecastday[i].high.fahrenheit); // in response - string
+                    ws[i].TemperatureCL = Convert.ToInt32((string)deserializedData.forecast.simpleforecast.forecastday[i].low.celsius); // in response - string
+                    ws[i].TemperatureFL = Convert.ToInt32((string)deserializedData.forecast.simpleforecast.forecastday[i].low.fahrenheit); // in response - string
 
-                    ws[i].WindSpeedKPH  = (uint)DeserializedData.forecast.simpleforecast.forecastday[i].avewind.kph; // in response - integer
-                    ws[i].WindSpeedMPH  = (uint)DeserializedData.forecast.simpleforecast.forecastday[i].avewind.mph; // in response - integer
-                    ws[i].WindDirection = (string)DeserializedData.forecast.simpleforecast.forecastday[i].avewind.dir; // in response - string
+                    ws[i].WindSpeedKph  = (uint)deserializedData.forecast.simpleforecast.forecastday[i].avewind.kph; // in response - integer
+                    ws[i].WindSpeedMph  = (uint)deserializedData.forecast.simpleforecast.forecastday[i].avewind.mph; // in response - integer
+                    ws[i].WindDirection = (string)deserializedData.forecast.simpleforecast.forecastday[i].avewind.dir; // in response - string
                 }
                 catch // In case of if response pattern was changed by wunderground.com
                 {
@@ -125,20 +125,20 @@ namespace WeatherUA.Source_Code
 
                     ws[i].SkyStat = "N/A";
 
-                    ws[i].TemperatureC_H = 0;
-                    ws[i].TemperatureC_L = 0;
-                    ws[i].TemperatureF_H = 0;
-                    ws[i].TemperatureF_L = 0;
+                    ws[i].TemperatureCH = 0;
+                    ws[i].TemperatureCL = 0;
+                    ws[i].TemperatureFH = 0;
+                    ws[i].TemperatureFL = 0;
 
-                    ws[i].WindSpeedKPH  = 0;
-                    ws[i].WindSpeedMPH  = 0;
+                    ws[i].WindSpeedKph  = 0;
+                    ws[i].WindSpeedMph  = 0;
                     ws[i].WindDirection = "N/A";
 
                     isSuccess = false; // If even only one day was with error, whole forecast assumes as invalid.
                 }
             }
 
-            weatherForecast = ws;
+            weatherForecast = ws.ToList();
             return isSuccess;
         }
     }

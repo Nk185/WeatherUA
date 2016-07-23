@@ -14,128 +14,128 @@
     <RegisteredVersion>1.4.2.1</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-07-21T23:36:28.177</Modified>
+      <Modified>2016-07-23T12:06:17.205</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\bin\Debug\WeatherUA.exe">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\bin\Debug\WeatherUA.exe">
       <PackagePath>WeatherUA.exe</PackagePath>
-      <Modified>2016-07-22T01:53:43.471</Modified>
+      <Modified>2016-07-23T14:22:22.905</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\packages\MvvmLightLibs.5.3.0.0\lib\windows81\GalaSoft.MvvmLight.dll">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\packages\MvvmLightLibs.5.3.0.0\lib\windows81\GalaSoft.MvvmLight.dll">
       <PackagePath>GalaSoft.MvvmLight.dll</PackagePath>
       <Modified>2016-07-13T23:44:17.763</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\packages\MvvmLightLibs.5.3.0.0\lib\windows81\GalaSoft.MvvmLight.Extras.dll">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\packages\MvvmLightLibs.5.3.0.0\lib\windows81\GalaSoft.MvvmLight.Extras.dll">
       <PackagePath>GalaSoft.MvvmLight.Extras.dll</PackagePath>
       <Modified>2016-07-13T23:44:17.764</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\packages\MvvmLightLibs.5.3.0.0\lib\windows81\GalaSoft.MvvmLight.Platform.dll">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\packages\MvvmLightLibs.5.3.0.0\lib\windows81\GalaSoft.MvvmLight.Platform.dll">
       <PackagePath>GalaSoft.MvvmLight.Platform.dll</PackagePath>
       <Modified>2016-07-13T23:44:17.772</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
       <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
       <Modified>2016-07-13T23:44:17.440</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\packages\Newtonsoft.Json.9.0.1\lib\netstandard1.0\Newtonsoft.Json.dll">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\packages\Newtonsoft.Json.9.0.1\lib\netstandard1.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
       <Modified>2016-07-14T14:25:32.012</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\Assets\Clear.png">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\Assets\Clear.png">
       <PackagePath>Assets\Clear.png</PackagePath>
       <Modified>2016-07-14T22:07:31.026</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\Assets\Cloud.png">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\Assets\Cloud.png">
       <PackagePath>Assets\Cloud.png</PackagePath>
       <Modified>2016-07-14T22:31:05.403</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2016-07-15T03:07:21.144</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\Assets\NoInfo.png">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\Assets\NoInfo.png">
       <PackagePath>Assets\NoInfo.png</PackagePath>
       <Modified>2016-07-15T15:20:25.608</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\Assets\Rain.png">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\Assets\Rain.png">
       <PackagePath>Assets\Rain.png</PackagePath>
       <Modified>2016-07-14T22:33:54.703</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2016-07-15T03:06:00.366</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\Assets\Snow.png">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\Assets\Snow.png">
       <PackagePath>Assets\Snow.png</PackagePath>
       <Modified>2016-07-14T22:36:53.274</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2016-07-15T03:10:36.258</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2016-07-15T03:06:38.114</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\Assets\thunderstorm.png">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\Assets\thunderstorm.png">
       <PackagePath>Assets\thunderstorm.png</PackagePath>
       <Modified>2016-07-14T22:35:02.417</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\Assets\wundergroundLogo_4c.png">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\Assets\wundergroundLogo_4c.png">
       <PackagePath>Assets\wundergroundLogo_4c.png</PackagePath>
       <Modified>2016-07-15T02:55:27.764</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\Assets\Cloudy.jpg">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\Assets\Cloudy.jpg">
       <PackagePath>Assets\Cloudy.jpg</PackagePath>
       <Modified>2016-07-18T18:56:10.255</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\Assets\Dust.jpg">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\Assets\Dust.jpg">
       <PackagePath>Assets\Dust.jpg</PackagePath>
       <Modified>2016-07-13T20:12:14.169</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\Assets\Mist.jpg">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\Assets\Mist.jpg">
       <PackagePath>Assets\Mist.jpg</PackagePath>
       <Modified>2016-07-13T20:08:12.058</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\Assets\Rainy.jpg">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\Assets\Rainy.jpg">
       <PackagePath>Assets\Rainy.jpg</PackagePath>
       <Modified>2016-07-14T23:25:09.551</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\Assets\Snowy.jpg">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\Assets\Snowy.jpg">
       <PackagePath>Assets\Snowy.jpg</PackagePath>
       <Modified>2016-07-18T18:52:57.793</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\Assets\SolidColor.jpg">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\Assets\SolidColor.jpg">
       <PackagePath>Assets\SolidColor.jpg</PackagePath>
       <Modified>2016-07-13T20:23:38.795</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\Assets\Sunny.jpg">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\Assets\Sunny.jpg">
       <PackagePath>Assets\Sunny.jpg</PackagePath>
       <Modified>2016-07-14T23:27:43.961</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\Assets\Thunderstorm.jpg">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\Assets\Thunderstorm.jpg">
       <PackagePath>Assets\Thunderstorm.jpg</PackagePath>
       <Modified>2016-07-13T20:17:19.476</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
       <Modified>2016-07-15T03:34:23.611</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\bin\Debug\View.xbf">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\bin\Debug\View.xbf">
       <PackagePath>View.xbf</PackagePath>
-      <Modified>2016-07-18T19:27:55.956</Modified>
+      <Modified>2016-07-23T14:22:22.333</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-07-22T01:53:43.697</Modified>
+      <Modified>2016-07-23T14:21:30.786</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

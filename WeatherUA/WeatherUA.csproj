@@ -107,11 +107,14 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Source Code\City.cs" />
     <Compile Include="Source Code\IViewModelNotifier.cs" />
     <Compile Include="Source Code\JsonParser.cs" />
     <Compile Include="Source Code\Model.cs" />
     <Compile Include="Source Code\Requestor.cs" />
     <Compile Include="Source Code\ViewModel.cs" />
+    <Compile Include="Source Code\WeatherStat.cs" />
+    <Compile Include="Source Code\WeatherStatForecast.cs" />
     <Compile Include="View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>

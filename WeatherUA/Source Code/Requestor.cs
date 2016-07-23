@@ -35,7 +35,7 @@ namespace WeatherUA.Source_Code
             
         }
 
-        public async Task getData(string city)
+        public async Task GetData(string city)
         {
             string resCur = "Error";
             string resForec = "Error";
