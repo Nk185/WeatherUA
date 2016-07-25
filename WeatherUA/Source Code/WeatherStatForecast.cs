@@ -3,13 +3,11 @@
  * Solution:       WeatherUA
  * Copyright:      Nk185
  * Code copyright: Nk185
- * File version:   1.4.3.0
+ * File version:   1.4.4.0
  * Used external packages: 
  *      Galasoft - MVVM;
  *      Newtonsoft - JSON;
  */
-
-using System;
 
 namespace WeatherUA.Source_Code
 {
@@ -17,83 +15,159 @@ namespace WeatherUA.Source_Code
     {
         private string _skyStat = "N/A";
         private string _windDirection = "N/A";
-        private string _weekdayShrt = "N/A";
-        private int _temperatureCH = 0;
-        private int _temperatureFH = 0;
-        private int _temperatureCL = 0;
-        private int _temperatureFL = 0;
-        private uint _windSpeedKph = 0;
-        private uint _windSpeedMph = 0;
-        private uint _day = 0;
 
-        public string SkyStat { get { return _skyStat; } set { _skyStat = value; } }
+        /// <summary>
+        /// Gets or sets sky status. E.g. Clear, Raing, Chace of a thunderstorm, etc.
+        /// </summary>
+        public string SkyStat
+        {
+            get
+            {
+                return _skyStat;
+            }
+            set
+            {
+                _skyStat = value;
+
+                if (value.Contains("Rain"))
+                    BackGroundImg = "Assets/Rain.png";
+                else if (value.Contains("Snow") || value.Contains("Ice") || value.Contains("Hail"))
+                    BackGroundImg = "Assets/Snow.png";
+                else if (value.Contains("Mist") || value.Contains("Fog") || value.Contains("Smoke"))
+                    BackGroundImg = "Assets/Cloud.png";
+                else if (value.Contains("Ash") || value.Contains("Dust") || value.Contains("Sand") ||
+                         value.Contains("Haze") || value.Contains("Spray") || value.Contains("Sandstorm"))
+                    BackGroundImg = "Assets/Cloud.png";
+                else if (value.Contains("Rain") && !value.Contains("Thunderstorm"))
+                    BackGroundImg = "Assets/Rain.png";
+                else if (value.Contains("Thunderstorm"))
+                    BackGroundImg = "Assets/thunderstorm.png";
+                else if (value.Contains("Overcast") || value.Contains("Cloudy") || value.Contains("Cloud") || value.Contains("Squalls"))
+                    BackGroundImg = "Assets/Cloud.png";
+                else if (value.Contains("Clear") || value.Contains("Partly Cloudy"))
+                    BackGroundImg = "Assets/Clear.png";
+                else // if N/A, Unknown or error
+                    BackGroundImg = "Assets/NoInfo.png";
+            }
+        }
+        /// <summary>
+        /// Gets wind direction according to pattern: "Wind direction: [value]". Or sets wind direction as single word, e.g. WNW, N, NNE, etc.
+        /// </summary>
         public string WindDirection { get { return "Wind direction: " + _windDirection; } set { _windDirection = value; } }
-        public uint Day { get { return _day; } set { _day = value; } }
-        public string WeekdayShrt { get { return _weekdayShrt; } set { _weekdayShrt = value; } }
+        /// <summary>
+        /// Gets or sets number of the day. E.g. 1, 2, 3, 4, etc.
+        /// </summary>
+        public uint Day { get; set; }
 
+        /// <summary>
+        /// Gets or sets short form of this weekday. E.g. "Mo", "Tu", "We", etc.
+        /// </summary>
+        public string WeekdayShrt { get; set; }
+
+        /// <summary>
+        /// Gets or sets text forecast for this day's day.
+        /// </summary>
+        public string DayForecHint { get; set; }
+        /// <summary>
+        /// Gets or sets text forecast for this day's night.
+        /// </summary>
+        public string NightForecHint { get; set; }
+
+        /// <summary>
+        /// Gets or sets text forecast for this day's day in metric format.
+        /// </summary>
+        public string DayForecHintMetric { get; set; }
+        /// <summary>
+        /// Gets or sets text forecast for this day's night in metric format.
+        /// </summary>
+        public string NightForecHintMetric { get; set; }
+
+        /// <summary>
+        /// Gets highest temperature info according to pattern: "High: [value 1]°C / [value 2]°F"
+        /// </summary>
         public string TemperatureH
         {
             get
             {
-                return "High: " + _temperatureCH.ToString() + "°C / "
-                       + _temperatureFH.ToString() + "°F";
+                return "High: " + TemperatureCH.ToString() + "°C / "
+                       + TemperatureFH.ToString() + "°F";
             }
         }
+
+        /// <summary>
+        /// Gets lowest temperature info according to pattern: "Low: [value 1]°C / [value 2]°F"
+        /// </summary>
         public string TemperatureL
         {
             get
             {
-                return "Low: " + _temperatureCL.ToString() + "°C / "
-                       + _temperatureFL.ToString() + "°F";
+                return "Low: " + TemperatureCL.ToString() + "°C / "
+                       + TemperatureFL.ToString() + "°F";
             }
         }
+
+        /// <summary>
+        /// Gets wind info according to pattern: "Wind speed: [value 1] km/h | [value 2] mph"
+        /// </summary>
         public string Wind
         {
             get
             {
-                return "Wind speed: " + _windSpeedKph.ToString() + " km/h | "
-                       + _windSpeedMph.ToString() + " mph";
+                return "Wind speed: " + WindSpeedKph.ToString() + " km/h | "
+                       + WindSpeedMph.ToString() + " mph";
             }
         }
+        
+        /// <summary>
+        /// Sets highest temperature this day in Celsius degrees.
+        /// </summary>
+        public int TemperatureCH { private get; set; }
 
-        public int TemperatureCH { set { _temperatureCH = value; } }
-        public int TemperatureFH { set { _temperatureFH = value; } }
-        public int TemperatureCL { set { _temperatureCL = value; } }
-        public int TemperatureFL { set { _temperatureFL = value; } }
+        /// <summary>
+        /// Sets highest temperature this day in Fahrenheit degrees.
+        /// </summary>
+        public int TemperatureFH { private get; set; }
 
+        /// <summary>
+        /// Sets lowest temperature this day in Celsius degrees.
+        /// </summary>
+        public int TemperatureCL { private get; set; }
 
-        public uint WindSpeedKph { set { _windSpeedKph = value; } }
-        public uint WindSpeedMph { set { _windSpeedMph = value; } }
+        /// <summary>
+        /// Sets lowest temperature this day in Fahrenheit degrees.
+        /// </summary>
+        public int TemperatureFL { private get; set; }
 
-        public String BackGroundImg
+        /// <summary>
+        /// Sets average wind speed this day in kilometers per hour.
+        /// </summary>
+        public uint WindSpeedKph { private get; set; }
+
+        /// <summary>
+        /// Sets average wind speed this day in miles per hour.
+        /// </summary>
+        public uint WindSpeedMph { private get; set; }
+
+        /// <summary>
+        /// Gets path to the icon of sky status
+        /// </summary>
+        public string BackGroundImg { get; private set; }
+
+        public WeatherStatForecast()
         {
-            get
-            {
-                String stat = SkyStat;
-                String res = "Assets/";
+            Day = 0;
+            WindSpeedMph  = 0;
+            WindSpeedKph  = 0;
+            TemperatureFL = 0;
+            TemperatureCL = 0;
+            TemperatureFH = 0;
+            TemperatureCH = 0;
 
-                if (stat.Contains("Rain"))
-                    res += "Rain.png";
-                else if (stat.Contains("Snow") || stat.Contains("Ice") || stat.Contains("Hail"))
-                    res += "Snow.png";
-                else if (stat.Contains("Mist") || stat.Contains("Fog") || stat.Contains("Smoke"))
-                    res += "Cloud.png";
-                else if (stat.Contains("Ash") || stat.Contains("Dust") || stat.Contains("Sand") ||
-                         stat.Contains("Haze") || stat.Contains("Spray") || stat.Contains("Sandstorm"))
-                    res += "Cloud.png";
-                else if (stat.Contains("Rain") && !stat.Contains("Thunderstorm"))
-                    res += "Rain.png";
-                else if (stat.Contains("Thunderstorm"))
-                    res += "thunderstorm.png";
-                else if (stat.Contains("Overcast") || stat.Contains("Cloudy") || stat.Contains("Cloud") || stat.Contains("Squalls"))
-                    res += "Cloud.png";
-                else if (stat.Contains("Clear") || stat.Contains("Partly Cloudy"))
-                    res += "Clear.png";
-                else // if N/A, Unknown or error
-                    res += "NoInfo.png";
-
-                return res;
-            }
+            WeekdayShrt = "N/A";
+            DayForecHint = "N/A";
+            NightForecHint = "N/A";
+            DayForecHintMetric = "N/A";
+            NightForecHintMetric = "N/A";
         }
     }
 }

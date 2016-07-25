@@ -3,19 +3,14 @@
  * Solution:       WeatherUA
  * Copyright:      Nk185
  * Code copyright: Nk185
- * File version:   1.4.1.0 
+ * File version:   1.4.4.0 
  * Used external packages: 
  *      Galasoft - MVVM;
  *      Newtonsoft - JSON;
  */
 
-using System;
-using System.Net;
 using System.Net.Http;
-using System.Threading;
 using System.Threading.Tasks;
-using System.Text;
-using System.IO;
 
 
 namespace WeatherUA.Source_Code
@@ -30,23 +25,22 @@ namespace WeatherUA.Source_Code
         public string CurrentWeatherJson { get; private set; }
         public string ForecastJson { get; private set; }
 
-        public Requestor()
-        {
-            
-        }
+        public string AstronomyJson { get; private set; }
 
         public async Task GetData(string city)
         {
-            string resCur = "Error";
+            string resCur   = "Error";
             string resForec = "Error";
+            string resAstr  = "Error";
 
             HttpClient client = new HttpClient();
+            HttpContent content;
 
             HttpResponseMessage response = await client.GetAsync("http://api.wunderground.com/api/faf69394af3f9e9b/conditions/q/UA/" + city + ".json");
 
             if (response.IsSuccessStatusCode)
             {
-                HttpContent content = response.Content;
+                content = response.Content;
                 resCur = content.ReadAsStringAsync().Result;
             }
 
@@ -54,12 +48,21 @@ namespace WeatherUA.Source_Code
 
             if (response.IsSuccessStatusCode)
             {
-                HttpContent content = response.Content;
+                content = response.Content;
                 resForec = content.ReadAsStringAsync().Result;
             }
 
+            response = await client.GetAsync("http://api.wunderground.com/api/faf69394af3f9e9b/astronomy/q/UA/" + city + ".json");
+
+            if (response.IsSuccessStatusCode)
+            {
+                content = response.Content;
+                resAstr = content.ReadAsStringAsync().Result;
+            }
+
             CurrentWeatherJson = resCur;
-            ForecastJson = resForec;
+            ForecastJson       = resForec;
+            AstronomyJson      = resAstr;
 
             client.Dispose();
         }

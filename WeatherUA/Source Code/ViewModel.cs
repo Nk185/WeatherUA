@@ -3,17 +3,13 @@
  * Solution:       WeatherUA
  * Copyright:      Nk185
  * Code copyright: Nk185
- * File version:   1.4.3.0
+ * File version:   1.4.4.0
  * Used external packages: 
  *      Galasoft - MVVM;
  *      Newtonsoft - JSON;
  */
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 
@@ -26,28 +22,46 @@ namespace WeatherUA.Source_Code
         private WeatherStat _currentStatus;
         private City _chosenCity;
 
+        /// <summary>
+        /// Gets command on "update button" click.
+        /// </summary>
         public RelayCommand UpdateBtn { get; private set; } // When button clicked in Settings     
 
+        /// <summary>
+        /// Gets list of weather forecasts.
+        /// </summary>
         public List<WeatherStatForecast> WeatherStatForecasts { get; private set; }
 
-        public List<City> Cities { get; set; } // Collection of items for listview (cities)
+        /// <summary>
+        /// Gets list of cities for which can get info.
+        /// </summary>
+        public List<City> Cities { get; private set; } // Collection of items for listview (cities)
+        /// <summary>
+        /// Gets or sets selected city.
+        /// </summary>
         public City ChosenCity
         {
             get { return _chosenCity; }
             set
             {
                 _chosenCity = value;
-                RaisePropertyChanged(() => TtlWeatherFor);
+                RaisePropertyChanged(() => TtlWeatherFor); // Auto update title and info when another city chosen
                 UpdateInfo();
             }
-        } // Auto update title and info when another city chosen
-
+        } 
+        
+        /// <summary>
+        /// Gets availability of "update" button. 
+        /// </summary>
         public bool UpdateBtnEnabled { get; private set; }
+        /// <summary>
+        /// Gets if "update" progress ring is enabled.
+        /// </summary>
         public bool ProgressRingEnabled { get { return !UpdateBtnEnabled; } }
 
         #region Main info about current day
-        public String TtlWeatherFor { get { return "WEATHER FOR: " + ChosenCity.Name.ToUpper() + ", UKRAINE"; } } // Title
-        public String TemperatureNow
+        public string TtlWeatherFor { get { return "WEATHER FOR: " + ChosenCity.Name.ToUpper() + ", UKRAINE"; } } // Title
+        public string TemperatureNow
         {
             get
             {
@@ -55,7 +69,7 @@ namespace WeatherUA.Source_Code
                     "°C / " + _currentStatus.TemperatureF + "°F";
             }
         }
-        public String FeelsLike
+        public string FeelsLike
         {
             get
             {
@@ -63,7 +77,7 @@ namespace WeatherUA.Source_Code
                     "°C / " + _currentStatus.FeelsLikeF + "°F";
             }
         }
-        public String SkyStatus
+        public string SkyStatus
         {
             get
             {
@@ -73,7 +87,7 @@ namespace WeatherUA.Source_Code
                     return "Sky status: " + _currentStatus.SkyStat;
             }
         }
-        public String WindSpeed
+        public string WindSpeed
         {
             get
             {
@@ -81,37 +95,10 @@ namespace WeatherUA.Source_Code
                     + _currentStatus.WindSpeedMph + "mph";
             }
         }
-        public String WindDirection { get { return "Wind direction: " + _currentStatus.WindDirection; } }
-        public String BackGroundImg
-        {
-            get
-            {
-                String stat = _currentStatus.SkyStat;
-                String res = "Assets/";
+        public string WindDirection { get { return "Wind direction: " + _currentStatus.WindDirection; } }
+        public string BackGroundImg { get { return _currentStatus.BackGroundImg; } }
 
-                if (stat.Contains("Rain"))
-                    res += "Rainy.jpg";
-                else if (stat.Contains("Snow") || stat.Contains("Ice") || stat.Contains("Hail"))
-                    res += "Snowy.jpg";
-                else if (stat.Contains("Mist") || stat.Contains("Fog") || stat.Contains("Smoke"))
-                    res += "Mist.jpg";
-                else if (stat.Contains("Ash") || stat.Contains("Dust") || stat.Contains("Sand") ||
-                    stat.Contains("Haze") || stat.Contains("Spray") || stat.Contains("Sandstorm"))
-                    res += "Dust.jpg";
-                else if (stat.Contains("Rain") && !stat.Contains("Thunderstorms"))
-                    res += "Rainy.jpg";
-                else if (stat.Contains("Thunderstorms"))
-                    res += "Thunderstorm.jpg";
-                else if (stat.Contains("Overcast") || stat.Contains("Cloudy") || stat.Contains("Cloud") || stat.Contains("Squalls"))
-                    res += "Cloudy.jpg";
-                else if (stat.Contains("Clear") || stat.Contains("Partly Cloudy"))
-                    res += "Sunny.jpg";
-                else // if N/A, Unknown or error
-                    res += "SolidColor.jpg";
-
-                return res;
-            }
-        }
+        public uint DayBrogressValue { get { return _currentStatus.Localtime; } }
         #endregion
 
         public ViewModel()
@@ -129,6 +116,11 @@ namespace WeatherUA.Source_Code
 
             //Load weather from server
             UpdateInfo();
+            /*WeatherStatForecasts = new List<WeatherStatForecast>();
+            _currentStatus = new WeatherStat();
+            WeatherStatForecasts.Add(new WeatherStatForecast());
+
+            UpdateBtnEnabled = true;*/
         }
 
         /// <summary>
@@ -156,6 +148,7 @@ namespace WeatherUA.Source_Code
             RaisePropertyChanged(() => SkyStatus);
             RaisePropertyChanged(() => WindSpeed);
             RaisePropertyChanged(() => WindDirection);
+            RaisePropertyChanged(() => DayBrogressValue);
             
             RaisePropertyChanged(() => UpdateBtnEnabled);
             RaisePropertyChanged(() => ProgressRingEnabled);
@@ -184,6 +177,7 @@ namespace WeatherUA.Source_Code
                 RaisePropertyChanged(() => WindSpeed);
                 RaisePropertyChanged(() => WindDirection);
                 RaisePropertyChanged(() => BackGroundImg);
+                RaisePropertyChanged(() => DayBrogressValue);
             }
 
             if (isForecValid)

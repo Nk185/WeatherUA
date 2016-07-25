@@ -3,7 +3,7 @@
  * Solution:       WeatherUA
  * Copyright:      Nk185
  * Code copyright: Nk185
- * File version:   1.4.3.0 
+ * File version:   1.4.4.0 
  * Used external packages: 
  *      Galasoft - MVVM;
  *      Newtonsoft - JSON;
@@ -11,9 +11,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.UI.Popups;
 
 namespace WeatherUA.Source_Code
@@ -33,7 +30,7 @@ namespace WeatherUA.Source_Code
 
         public Model(IViewModelNotifier viewNotifier)
         {
-            this._viewNotifier = viewNotifier;
+            _viewNotifier = viewNotifier;
             InitCitiesList();
         }
 
@@ -43,7 +40,7 @@ namespace WeatherUA.Source_Code
         /// </summary>
         private void InitCitiesList()
         {
-            this.Cities = new List<City>
+            Cities = new List<City>
             {
                 new City { Name = "Ai-Petri", Content = "Ai-Petri" },
                 new City { Name = "Aleksandropol", Content = "Aleksandropol" },
@@ -193,55 +190,68 @@ namespace WeatherUA.Source_Code
         }
 
         /// <summary>
-        /// Gets json response as string and sends it for parsing.
+        /// Loads and parses weather data from server.
+        /// When done, invokes PropertyChangedW from IViewModelNotifier.
         /// </summary>
-        /// <param name="forecast">Reference to forecast array</param>
-        /// <param name="currStat">Reference to current weather status</param>
-        /// <returns>If data was successfully recived. If returns false, data was not changed.</returns>
+        /// <param name="city">City to load data for.</param>
         public async void LoadWeatherData(string city)
         {
             try
             {
-                List<WeatherStatForecast> forecast = new List<WeatherStatForecast>();
-                WeatherStat currentStatus = new WeatherStat();
                 Requestor requestor = new Requestor();
-                bool statSuccessfully = false;
-                bool forecSuccessfully = false;
+                List<WeatherStatForecast> forecast;
+                WeatherStat currentStatus;
                 JsonParser jsp;
+                bool statSuccessfully;
+                bool forecSuccessfully;
+                bool astroSuccessfully;
+                uint sunrise;
+                uint moonrise;
+                uint localTime;
+               
 
-                await requestor.GetData(city); // getting json response
+                await requestor.GetData(city); // getting json responses
 
-                jsp = new JsonParser(requestor.CurrentWeatherJson);
-
+                jsp              = new JsonParser(requestor.CurrentWeatherJson);
                 statSuccessfully = jsp.ParseWeatherStat(out currentStatus); // parsing current status
 
                 jsp.EnterNewResponse = requestor.ForecastJson;
-                forecSuccessfully = jsp.ParseWeatherForec(out forecast); // parsing forecast
+                forecSuccessfully    = jsp.ParseWeatherForec(out forecast); // parsing forecast
 
-                if (statSuccessfully || forecSuccessfully)
+                jsp.EnterNewResponse    = requestor.AstronomyJson;
+                astroSuccessfully       = jsp.ParseSunriseAndSunset(out sunrise, out moonrise, out localTime); // parsing sunrise and sunset hours
+                currentStatus.SunRise   = sunrise;
+                currentStatus.MoonRise  = moonrise;
+                currentStatus.Localtime = localTime;
+
+                if (statSuccessfully || forecSuccessfully || astroSuccessfully)
                 {
                     if (!forecSuccessfully)
-                        this.ShowMsg("Occurred error: Cannot load all required data for forecast. All missed data will be replaced by default values." +
+                        ShowMsg("Occurred error: Cannot load all required data for forecast. All missed data will be replaced by default values." +
                             " Try to update info a bit later...", "Got it");
 
                     if (!statSuccessfully)
-                        this.ShowMsg("Occurred error: Cannot load current weather status. All missed data will be replaced by default values." +
+                        ShowMsg("Occurred error: Cannot load current weather status. All missed data will be replaced by default values." +
                             " Try to update info a bit later...", "Got it");
 
-                    this._viewNotifier.PropertyChangedW(currentStatus, forecast, true, true);
+                    if (!astroSuccessfully)
+                        ShowMsg("Occurred error: Cannot load all required data for sunrise or sunset. All missed data will be replaced by default values." +
+                            " Try to update info a bit later...", "Got it");
+
+                    _viewNotifier.PropertyChangedW(currentStatus, forecast, true, true);
                 }
                 else
                 {
-                    this.ShowMsg("Occurred error: No Internet connection or server is not responding on requests. Try again a bit later...", "Got it");
+                    ShowMsg("Occurred error: No Internet connection or server is not responding on requests. Try again a bit later...", "Got it");
 
-                    this._viewNotifier.PropertyChangedW(null, null, false, false); // To enable button and viewlist
+                    _viewNotifier.PropertyChangedW(null, null, false, false); // To enable button and viewlist
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                this.ShowMsg("Occurred error: seems like we cannot access the Internet. Check your connection.", "Got it");
+                ShowMsg("Occurred error: seems like we cannot access the Internet. Check your connection.", "Got it");
 
-                this._viewNotifier.PropertyChangedW(null, null, false, false); // To enable button and viewlist
+                _viewNotifier.PropertyChangedW(null, null, false, false); // To enable button and viewlist
             }
                 
         }
@@ -258,9 +268,9 @@ namespace WeatherUA.Source_Code
 
                 await msgDial.ShowAsync();
             }
-            catch (Exception e)
+            catch (Exception)
             {
-
+                // ignored
             }
         }
         private async void ShowMsg(string msg, string btn1Txt)
@@ -274,15 +284,17 @@ namespace WeatherUA.Source_Code
 
                 await msgDial.ShowAsync();
             }
-            catch (Exception e)
+            catch (Exception)
             {
-
+                // ignored
             }
         }
 
+/*
         private void GotItBtn(IUICommand cmd)
         {
 
         }
+*/
     }
 }

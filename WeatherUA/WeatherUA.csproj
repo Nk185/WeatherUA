@@ -128,22 +128,28 @@
     <None Include="WeatherUA_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Clear.jpg" />
     <Content Include="Assets\Clear.png" />
+    <Content Include="Assets\ClearNight.jpg" />
     <Content Include="Assets\Cloud.png" />
     <Content Include="Assets\Cloudy.jpg" />
+    <Content Include="Assets\CloudyNight.jpg" />
     <Content Include="Assets\Dust.jpg" />
+    <Content Include="Assets\DustNight.jpg" />
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\Mist.jpg" />
+    <Content Include="Assets\MistNight.jpg" />
     <Content Include="Assets\NoInfo.png" />
     <Content Include="Assets\Rain.png" />
     <Content Include="Assets\Rainy.jpg" />
+    <Content Include="Assets\RainyNight.jpg" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\Snow.png" />
     <Content Include="Assets\Snowy.jpg" />
+    <Content Include="Assets\SnowyNight.jpg" />
     <Content Include="Assets\SolidColor.jpg" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
-    <Content Include="Assets\Sunny.jpg" />
     <Content Include="Assets\Thunderstorm.jpg" />
     <Content Include="Assets\thunderstorm.png" />
     <Content Include="Assets\wundergroundLogo_4c.png" />

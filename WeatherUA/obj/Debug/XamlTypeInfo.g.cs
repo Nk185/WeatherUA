@@ -239,6 +239,7 @@ namespace WeatherUA.WeatherUA_XamlTypeInfo
                 userType.AddMemberName("WindSpeed");
                 userType.AddMemberName("WindDirection");
                 userType.AddMemberName("BackGroundImg");
+                userType.AddMemberName("DayBrogressValue");
                 xamlType = userType;
                 break;
 
@@ -278,6 +279,10 @@ namespace WeatherUA.WeatherUA_XamlTypeInfo
                 userType.AddMemberName("WindDirection");
                 userType.AddMemberName("Day");
                 userType.AddMemberName("WeekdayShrt");
+                userType.AddMemberName("DayForecHint");
+                userType.AddMemberName("NightForecHint");
+                userType.AddMemberName("DayForecHintMetric");
+                userType.AddMemberName("NightForecHintMetric");
                 userType.AddMemberName("TemperatureH");
                 userType.AddMemberName("TemperatureL");
                 userType.AddMemberName("Wind");
@@ -390,142 +395,182 @@ namespace WeatherUA.WeatherUA_XamlTypeInfo
             var that = (global::WeatherUA.Source_Code.WeatherStatForecast)instance;
             that.WeekdayShrt = (global::System.String)Value;
         }
-        private object get_6_WeatherStatForecast_TemperatureH(object instance)
+        private object get_6_WeatherStatForecast_DayForecHint(object instance)
+        {
+            var that = (global::WeatherUA.Source_Code.WeatherStatForecast)instance;
+            return that.DayForecHint;
+        }
+        private void set_6_WeatherStatForecast_DayForecHint(object instance, object Value)
+        {
+            var that = (global::WeatherUA.Source_Code.WeatherStatForecast)instance;
+            that.DayForecHint = (global::System.String)Value;
+        }
+        private object get_7_WeatherStatForecast_NightForecHint(object instance)
+        {
+            var that = (global::WeatherUA.Source_Code.WeatherStatForecast)instance;
+            return that.NightForecHint;
+        }
+        private void set_7_WeatherStatForecast_NightForecHint(object instance, object Value)
+        {
+            var that = (global::WeatherUA.Source_Code.WeatherStatForecast)instance;
+            that.NightForecHint = (global::System.String)Value;
+        }
+        private object get_8_WeatherStatForecast_DayForecHintMetric(object instance)
+        {
+            var that = (global::WeatherUA.Source_Code.WeatherStatForecast)instance;
+            return that.DayForecHintMetric;
+        }
+        private void set_8_WeatherStatForecast_DayForecHintMetric(object instance, object Value)
+        {
+            var that = (global::WeatherUA.Source_Code.WeatherStatForecast)instance;
+            that.DayForecHintMetric = (global::System.String)Value;
+        }
+        private object get_9_WeatherStatForecast_NightForecHintMetric(object instance)
+        {
+            var that = (global::WeatherUA.Source_Code.WeatherStatForecast)instance;
+            return that.NightForecHintMetric;
+        }
+        private void set_9_WeatherStatForecast_NightForecHintMetric(object instance, object Value)
+        {
+            var that = (global::WeatherUA.Source_Code.WeatherStatForecast)instance;
+            that.NightForecHintMetric = (global::System.String)Value;
+        }
+        private object get_10_WeatherStatForecast_TemperatureH(object instance)
         {
             var that = (global::WeatherUA.Source_Code.WeatherStatForecast)instance;
             return that.TemperatureH;
         }
-        private object get_7_WeatherStatForecast_TemperatureL(object instance)
+        private object get_11_WeatherStatForecast_TemperatureL(object instance)
         {
             var that = (global::WeatherUA.Source_Code.WeatherStatForecast)instance;
             return that.TemperatureL;
         }
-        private object get_8_WeatherStatForecast_Wind(object instance)
+        private object get_12_WeatherStatForecast_Wind(object instance)
         {
             var that = (global::WeatherUA.Source_Code.WeatherStatForecast)instance;
             return that.Wind;
         }
-        private void set_9_WeatherStatForecast_TemperatureCH(object instance, object Value)
+        private void set_13_WeatherStatForecast_TemperatureCH(object instance, object Value)
         {
             var that = (global::WeatherUA.Source_Code.WeatherStatForecast)instance;
             that.TemperatureCH = (global::System.Int32)Value;
         }
-        private void set_10_WeatherStatForecast_TemperatureFH(object instance, object Value)
+        private void set_14_WeatherStatForecast_TemperatureFH(object instance, object Value)
         {
             var that = (global::WeatherUA.Source_Code.WeatherStatForecast)instance;
             that.TemperatureFH = (global::System.Int32)Value;
         }
-        private void set_11_WeatherStatForecast_TemperatureCL(object instance, object Value)
+        private void set_15_WeatherStatForecast_TemperatureCL(object instance, object Value)
         {
             var that = (global::WeatherUA.Source_Code.WeatherStatForecast)instance;
             that.TemperatureCL = (global::System.Int32)Value;
         }
-        private void set_12_WeatherStatForecast_TemperatureFL(object instance, object Value)
+        private void set_16_WeatherStatForecast_TemperatureFL(object instance, object Value)
         {
             var that = (global::WeatherUA.Source_Code.WeatherStatForecast)instance;
             that.TemperatureFL = (global::System.Int32)Value;
         }
-        private void set_13_WeatherStatForecast_WindSpeedKph(object instance, object Value)
+        private void set_17_WeatherStatForecast_WindSpeedKph(object instance, object Value)
         {
             var that = (global::WeatherUA.Source_Code.WeatherStatForecast)instance;
             that.WindSpeedKph = (global::System.UInt32)Value;
         }
-        private void set_14_WeatherStatForecast_WindSpeedMph(object instance, object Value)
+        private void set_18_WeatherStatForecast_WindSpeedMph(object instance, object Value)
         {
             var that = (global::WeatherUA.Source_Code.WeatherStatForecast)instance;
             that.WindSpeedMph = (global::System.UInt32)Value;
         }
-        private object get_15_WeatherStatForecast_BackGroundImg(object instance)
+        private object get_19_WeatherStatForecast_BackGroundImg(object instance)
         {
             var that = (global::WeatherUA.Source_Code.WeatherStatForecast)instance;
             return that.BackGroundImg;
         }
-        private object get_16_ViewModel_Cities(object instance)
+        private object get_20_ViewModel_Cities(object instance)
         {
             var that = (global::WeatherUA.Source_Code.ViewModel)instance;
             return that.Cities;
         }
-        private void set_16_ViewModel_Cities(object instance, object Value)
-        {
-            var that = (global::WeatherUA.Source_Code.ViewModel)instance;
-            that.Cities = (global::System.Collections.Generic.List<global::WeatherUA.Source_Code.City>)Value;
-        }
-        private object get_17_City_Name(object instance)
+        private object get_21_City_Name(object instance)
         {
             var that = (global::WeatherUA.Source_Code.City)instance;
             return that.Name;
         }
-        private void set_17_City_Name(object instance, object Value)
+        private void set_21_City_Name(object instance, object Value)
         {
             var that = (global::WeatherUA.Source_Code.City)instance;
             that.Name = (global::System.String)Value;
         }
-        private object get_18_City_Content(object instance)
+        private object get_22_City_Content(object instance)
         {
             var that = (global::WeatherUA.Source_Code.City)instance;
             return that.Content;
         }
-        private void set_18_City_Content(object instance, object Value)
+        private void set_22_City_Content(object instance, object Value)
         {
             var that = (global::WeatherUA.Source_Code.City)instance;
             that.Content = (global::System.String)Value;
         }
-        private object get_19_ViewModel_ChosenCity(object instance)
+        private object get_23_ViewModel_ChosenCity(object instance)
         {
             var that = (global::WeatherUA.Source_Code.ViewModel)instance;
             return that.ChosenCity;
         }
-        private void set_19_ViewModel_ChosenCity(object instance, object Value)
+        private void set_23_ViewModel_ChosenCity(object instance, object Value)
         {
             var that = (global::WeatherUA.Source_Code.ViewModel)instance;
             that.ChosenCity = (global::WeatherUA.Source_Code.City)Value;
         }
-        private object get_20_ViewModel_UpdateBtnEnabled(object instance)
+        private object get_24_ViewModel_UpdateBtnEnabled(object instance)
         {
             var that = (global::WeatherUA.Source_Code.ViewModel)instance;
             return that.UpdateBtnEnabled;
         }
-        private object get_21_ViewModel_ProgressRingEnabled(object instance)
+        private object get_25_ViewModel_ProgressRingEnabled(object instance)
         {
             var that = (global::WeatherUA.Source_Code.ViewModel)instance;
             return that.ProgressRingEnabled;
         }
-        private object get_22_ViewModel_TtlWeatherFor(object instance)
+        private object get_26_ViewModel_TtlWeatherFor(object instance)
         {
             var that = (global::WeatherUA.Source_Code.ViewModel)instance;
             return that.TtlWeatherFor;
         }
-        private object get_23_ViewModel_TemperatureNow(object instance)
+        private object get_27_ViewModel_TemperatureNow(object instance)
         {
             var that = (global::WeatherUA.Source_Code.ViewModel)instance;
             return that.TemperatureNow;
         }
-        private object get_24_ViewModel_FeelsLike(object instance)
+        private object get_28_ViewModel_FeelsLike(object instance)
         {
             var that = (global::WeatherUA.Source_Code.ViewModel)instance;
             return that.FeelsLike;
         }
-        private object get_25_ViewModel_SkyStatus(object instance)
+        private object get_29_ViewModel_SkyStatus(object instance)
         {
             var that = (global::WeatherUA.Source_Code.ViewModel)instance;
             return that.SkyStatus;
         }
-        private object get_26_ViewModel_WindSpeed(object instance)
+        private object get_30_ViewModel_WindSpeed(object instance)
         {
             var that = (global::WeatherUA.Source_Code.ViewModel)instance;
             return that.WindSpeed;
         }
-        private object get_27_ViewModel_WindDirection(object instance)
+        private object get_31_ViewModel_WindDirection(object instance)
         {
             var that = (global::WeatherUA.Source_Code.ViewModel)instance;
             return that.WindDirection;
         }
-        private object get_28_ViewModel_BackGroundImg(object instance)
+        private object get_32_ViewModel_BackGroundImg(object instance)
         {
             var that = (global::WeatherUA.Source_Code.ViewModel)instance;
             return that.BackGroundImg;
         }
-        private object get_29_ViewModelBase_IsInDesignMode(object instance)
+        private object get_33_ViewModel_DayBrogressValue(object instance)
+        {
+            var that = (global::WeatherUA.Source_Code.ViewModel)instance;
+            return that.DayBrogressValue;
+        }
+        private object get_34_ViewModelBase_IsInDesignMode(object instance)
         {
             var that = (global::GalaSoft.MvvmLight.ViewModelBase)instance;
             return that.IsInDesignMode;
@@ -574,142 +619,172 @@ namespace WeatherUA.WeatherUA_XamlTypeInfo
                 xamlMember.Getter = get_5_WeatherStatForecast_WeekdayShrt;
                 xamlMember.Setter = set_5_WeatherStatForecast_WeekdayShrt;
                 break;
+            case "WeatherUA.Source_Code.WeatherStatForecast.DayForecHint":
+                userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.WeatherStatForecast");
+                xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "DayForecHint", "String");
+                xamlMember.Getter = get_6_WeatherStatForecast_DayForecHint;
+                xamlMember.Setter = set_6_WeatherStatForecast_DayForecHint;
+                break;
+            case "WeatherUA.Source_Code.WeatherStatForecast.NightForecHint":
+                userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.WeatherStatForecast");
+                xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "NightForecHint", "String");
+                xamlMember.Getter = get_7_WeatherStatForecast_NightForecHint;
+                xamlMember.Setter = set_7_WeatherStatForecast_NightForecHint;
+                break;
+            case "WeatherUA.Source_Code.WeatherStatForecast.DayForecHintMetric":
+                userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.WeatherStatForecast");
+                xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "DayForecHintMetric", "String");
+                xamlMember.Getter = get_8_WeatherStatForecast_DayForecHintMetric;
+                xamlMember.Setter = set_8_WeatherStatForecast_DayForecHintMetric;
+                break;
+            case "WeatherUA.Source_Code.WeatherStatForecast.NightForecHintMetric":
+                userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.WeatherStatForecast");
+                xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "NightForecHintMetric", "String");
+                xamlMember.Getter = get_9_WeatherStatForecast_NightForecHintMetric;
+                xamlMember.Setter = set_9_WeatherStatForecast_NightForecHintMetric;
+                break;
             case "WeatherUA.Source_Code.WeatherStatForecast.TemperatureH":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.WeatherStatForecast");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "TemperatureH", "String");
-                xamlMember.Getter = get_6_WeatherStatForecast_TemperatureH;
+                xamlMember.Getter = get_10_WeatherStatForecast_TemperatureH;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WeatherUA.Source_Code.WeatherStatForecast.TemperatureL":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.WeatherStatForecast");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "TemperatureL", "String");
-                xamlMember.Getter = get_7_WeatherStatForecast_TemperatureL;
+                xamlMember.Getter = get_11_WeatherStatForecast_TemperatureL;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WeatherUA.Source_Code.WeatherStatForecast.Wind":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.WeatherStatForecast");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "Wind", "String");
-                xamlMember.Getter = get_8_WeatherStatForecast_Wind;
+                xamlMember.Getter = get_12_WeatherStatForecast_Wind;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WeatherUA.Source_Code.WeatherStatForecast.TemperatureCH":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.WeatherStatForecast");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "TemperatureCH", "Int32");
-                xamlMember.Setter = set_9_WeatherStatForecast_TemperatureCH;
+                xamlMember.Setter = set_13_WeatherStatForecast_TemperatureCH;
                 break;
             case "WeatherUA.Source_Code.WeatherStatForecast.TemperatureFH":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.WeatherStatForecast");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "TemperatureFH", "Int32");
-                xamlMember.Setter = set_10_WeatherStatForecast_TemperatureFH;
+                xamlMember.Setter = set_14_WeatherStatForecast_TemperatureFH;
                 break;
             case "WeatherUA.Source_Code.WeatherStatForecast.TemperatureCL":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.WeatherStatForecast");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "TemperatureCL", "Int32");
-                xamlMember.Setter = set_11_WeatherStatForecast_TemperatureCL;
+                xamlMember.Setter = set_15_WeatherStatForecast_TemperatureCL;
                 break;
             case "WeatherUA.Source_Code.WeatherStatForecast.TemperatureFL":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.WeatherStatForecast");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "TemperatureFL", "Int32");
-                xamlMember.Setter = set_12_WeatherStatForecast_TemperatureFL;
+                xamlMember.Setter = set_16_WeatherStatForecast_TemperatureFL;
                 break;
             case "WeatherUA.Source_Code.WeatherStatForecast.WindSpeedKph":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.WeatherStatForecast");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "WindSpeedKph", "UInt32");
-                xamlMember.Setter = set_13_WeatherStatForecast_WindSpeedKph;
+                xamlMember.Setter = set_17_WeatherStatForecast_WindSpeedKph;
                 break;
             case "WeatherUA.Source_Code.WeatherStatForecast.WindSpeedMph":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.WeatherStatForecast");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "WindSpeedMph", "UInt32");
-                xamlMember.Setter = set_14_WeatherStatForecast_WindSpeedMph;
+                xamlMember.Setter = set_18_WeatherStatForecast_WindSpeedMph;
                 break;
             case "WeatherUA.Source_Code.WeatherStatForecast.BackGroundImg":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.WeatherStatForecast");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "BackGroundImg", "String");
-                xamlMember.Getter = get_15_WeatherStatForecast_BackGroundImg;
+                xamlMember.Getter = get_19_WeatherStatForecast_BackGroundImg;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WeatherUA.Source_Code.ViewModel.Cities":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.ViewModel");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "Cities", "System.Collections.Generic.List`1<WeatherUA.Source_Code.City>");
-                xamlMember.Getter = get_16_ViewModel_Cities;
-                xamlMember.Setter = set_16_ViewModel_Cities;
+                xamlMember.Getter = get_20_ViewModel_Cities;
+                xamlMember.SetIsReadOnly();
                 break;
             case "WeatherUA.Source_Code.City.Name":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.City");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "Name", "String");
-                xamlMember.Getter = get_17_City_Name;
-                xamlMember.Setter = set_17_City_Name;
+                xamlMember.Getter = get_21_City_Name;
+                xamlMember.Setter = set_21_City_Name;
                 break;
             case "WeatherUA.Source_Code.City.Content":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.City");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "Content", "String");
-                xamlMember.Getter = get_18_City_Content;
-                xamlMember.Setter = set_18_City_Content;
+                xamlMember.Getter = get_22_City_Content;
+                xamlMember.Setter = set_22_City_Content;
                 break;
             case "WeatherUA.Source_Code.ViewModel.ChosenCity":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.ViewModel");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "ChosenCity", "WeatherUA.Source_Code.City");
-                xamlMember.Getter = get_19_ViewModel_ChosenCity;
-                xamlMember.Setter = set_19_ViewModel_ChosenCity;
+                xamlMember.Getter = get_23_ViewModel_ChosenCity;
+                xamlMember.Setter = set_23_ViewModel_ChosenCity;
                 break;
             case "WeatherUA.Source_Code.ViewModel.UpdateBtnEnabled":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.ViewModel");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "UpdateBtnEnabled", "Boolean");
-                xamlMember.Getter = get_20_ViewModel_UpdateBtnEnabled;
+                xamlMember.Getter = get_24_ViewModel_UpdateBtnEnabled;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WeatherUA.Source_Code.ViewModel.ProgressRingEnabled":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.ViewModel");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "ProgressRingEnabled", "Boolean");
-                xamlMember.Getter = get_21_ViewModel_ProgressRingEnabled;
+                xamlMember.Getter = get_25_ViewModel_ProgressRingEnabled;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WeatherUA.Source_Code.ViewModel.TtlWeatherFor":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.ViewModel");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "TtlWeatherFor", "String");
-                xamlMember.Getter = get_22_ViewModel_TtlWeatherFor;
+                xamlMember.Getter = get_26_ViewModel_TtlWeatherFor;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WeatherUA.Source_Code.ViewModel.TemperatureNow":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.ViewModel");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "TemperatureNow", "String");
-                xamlMember.Getter = get_23_ViewModel_TemperatureNow;
+                xamlMember.Getter = get_27_ViewModel_TemperatureNow;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WeatherUA.Source_Code.ViewModel.FeelsLike":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.ViewModel");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "FeelsLike", "String");
-                xamlMember.Getter = get_24_ViewModel_FeelsLike;
+                xamlMember.Getter = get_28_ViewModel_FeelsLike;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WeatherUA.Source_Code.ViewModel.SkyStatus":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.ViewModel");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "SkyStatus", "String");
-                xamlMember.Getter = get_25_ViewModel_SkyStatus;
+                xamlMember.Getter = get_29_ViewModel_SkyStatus;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WeatherUA.Source_Code.ViewModel.WindSpeed":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.ViewModel");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "WindSpeed", "String");
-                xamlMember.Getter = get_26_ViewModel_WindSpeed;
+                xamlMember.Getter = get_30_ViewModel_WindSpeed;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WeatherUA.Source_Code.ViewModel.WindDirection":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.ViewModel");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "WindDirection", "String");
-                xamlMember.Getter = get_27_ViewModel_WindDirection;
+                xamlMember.Getter = get_31_ViewModel_WindDirection;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WeatherUA.Source_Code.ViewModel.BackGroundImg":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.ViewModel");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "BackGroundImg", "String");
-                xamlMember.Getter = get_28_ViewModel_BackGroundImg;
+                xamlMember.Getter = get_32_ViewModel_BackGroundImg;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "WeatherUA.Source_Code.ViewModel.DayBrogressValue":
+                userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WeatherUA.Source_Code.ViewModel");
+                xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "DayBrogressValue", "UInt32");
+                xamlMember.Getter = get_33_ViewModel_DayBrogressValue;
                 xamlMember.SetIsReadOnly();
                 break;
             case "GalaSoft.MvvmLight.ViewModelBase.IsInDesignMode":
                 userType = (global::WeatherUA.WeatherUA_XamlTypeInfo.XamlUserType)GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase");
                 xamlMember = new global::WeatherUA.WeatherUA_XamlTypeInfo.XamlMember(this, "IsInDesignMode", "Boolean");
-                xamlMember.Getter = get_29_ViewModelBase_IsInDesignMode;
+                xamlMember.Getter = get_34_ViewModelBase_IsInDesignMode;
                 xamlMember.SetIsReadOnly();
                 break;
             }

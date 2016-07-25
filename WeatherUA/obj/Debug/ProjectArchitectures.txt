@@ -1,1 +1,1 @@
-G:\SoftwareDevelopment\Source\Новая папка\WeatherUA — копия\WeatherUA\WeatherUA.csproj;neutral
+G:\SoftwareDevelopment\Source\Новая папка\WeatherUA\WeatherUA\WeatherUA.csproj;neutral
